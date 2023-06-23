@@ -8,8 +8,8 @@ jobs:
   create-release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: taiki-e/create-gh-release-action@v1
+      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      - uses: taiki-e/create-gh-release-action@3b8000942cbb1a3a131e78f4d3ccfe1575c2c278 # v1.7.0
         with:
           branch: main
         env:
@@ -32,8 +32,8 @@ jobs:
             os: windows-latest
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
-      - uses: taiki-e/upload-rust-binary-action@v1
+      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      - uses: taiki-e/upload-rust-binary-action@d310f4341701c88533488a41daf7df8e3dbbdd84 # v1.14.0
         with:
           bin: cargo-chef
           target: ${{ matrix.target }}

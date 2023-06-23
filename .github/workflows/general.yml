@@ -7,16 +7,16 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      - uses: dtolnay/rust-toolchain@0e41f80ddf3dd5376629cdf1e757c9224b1c1e5b # stable
       - run: cargo test
 
   fmt:
     name: Rustfmt
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      - uses: dtolnay/rust-toolchain@0e41f80ddf3dd5376629cdf1e757c9224b1c1e5b # stable
         with:
           components: rustfmt
       - run: cargo fmt --all -- --check
@@ -25,8 +25,8 @@ jobs:
     name: Clippy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      - uses: dtolnay/rust-toolchain@0e41f80ddf3dd5376629cdf1e757c9224b1c1e5b # stable
         with:
           components: clippy
       - run: cargo clippy -- -D warnings
@@ -36,12 +36,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
 
       - name: Install stable toolchain
-        uses: dtolnay/rust-toolchain@stable
+        uses: dtolnay/rust-toolchain@0e41f80ddf3dd5376629cdf1e757c9224b1c1e5b # stable
       - name: Install cargo-tarpaulin
-        uses: taiki-e/install-action@v2
+        uses: taiki-e/install-action@486baeb8af63bc3d9ec3ec66db5af6ba0ca78774 # v2.11.6
         with:
           tool: cargo-tarpaulin
           checksum: true
